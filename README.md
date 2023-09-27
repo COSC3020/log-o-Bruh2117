@@ -12,3 +12,6 @@ page](https://docs.github.com/en/get-started/writing-on-github/working-with-adva
 might help with the notation for mathematical expressions.
 
 $T(n) \in O(f(n)) \iff \exists c, n_0: T(n) \leq c \cdot f(n) \forall n \geq n_0$
+
+- Thm: $O(log_{2}n)$ is the same as $O(log_{5}n)$
+- Proof: Suppose we have the function $log_{2}n$. By the change of base formula, we can say $log_{2}n = \frac {log_{a}n}{log_{a}2}$. Then, by the mathematical definition of $O$, clearly $log_{2}n \leq c \cdot log_{a}n$, where $c = \frac {1}{\abs {log_{a}2}}$ and $n_{0} \geq 1$, meaning for any positive real number base $a$, $log_{2}n \in O(log_{a}n)$, proving the theorem. 
