@@ -26,4 +26,4 @@ $T(n) \in O(f(n)) \iff \exists c, n_0: T(n) \leq c \cdot f(n) \forall n \geq n_0
 - Therefore $T(n) \in O(log_{2}n)$
 
 - This shows $\forall T(n), T(n) \in O(log_{2}n) -> T(n) \in O(log_{5}n)$
-- Thus $O(log_{2}n) and O(log_{5}n)$ are the same
+- Thus $O(log_{2}n)$ and $O(log_{5}n)$ are the same
