@@ -13,6 +13,17 @@ might help with the notation for mathematical expressions.
 
 $T(n) \in O(f(n)) \iff \exists c, n_0: T(n) \leq c \cdot f(n) \forall n \geq n_0$
 
-- If $O(log_{2} n)$ is the same as $O(log_{5} n)$, that means asymptotically the log bases are arbitrary in terms of $O$, so to prove that we will have to prove that for any $T(n)$, $T(n) \in O(log_{a} n) \implies T(n) \in O(log_{b} n)$ for arbitrary choices of a and b. 
-- Thm: For any $T(n)$, $T(n) \in O(log_{a} n) \implies T(n) \in O(log_{b} n)$ for arbitrary choices of a and b
-- Proof: Suppose $T(n) \in O(log_{a} n)$, for an arbitrary a, which by the definition of $O(log_{a} n)$ means $\exists c, n_0: T(n) \leq c \cdot log_{a} n \forall n \geq n_0$. Say $c = log_{b} a$, for an arbitrary b, which gives $T(n) \leq log_{b} a \cdot log_{a} n = \frac {log a}{log b} \cdot \frac {log n}{log a} = \frac {log n}{log b} = log_{b} n$. So $T(n) \leq log_{b} n$, and by the definition of $O(log_{b} n)$, $T(n) \in O(log_{b} n)$, proving the theorem, showing that $O(log_{2} n)$ is the same as $O(log_{5} n)$. 
+- Thm: $O(log_{2}n) and O(log_{5}n)$ are the same
+- Proof:
+- From the definition of $O$, suppose $T(n) \in O(log_{2}n) \iff \exists c, n_0: T(n) \leq c \cdot log_{2}n \forall n \geq n_0$
+- Using the change of base formula for logs, we can write this as $T(n) \in O(log_{2}n) \iff \exists c, n_0: T(n) \leq c \cdot \frac {log_{5}n}{log_{5}2} \forall n \geq n_0$
+- Since log_{5}2 is just some constant, we see that $T(n) \in O(log_{2}n) \iff \exists c, n_0: T(n) \leq c \cdot log_{5}n \forall n \geq n_0$
+- Therefore $T(n) \in O(log_{5}n)$
+
+- And vice versa, $T(n) \in O(log_{5}n) \iff \exists c, n_0: T(n) \leq c \cdot log_{5}n \forall n \geq n_0$
+- = $T(n) \in O(log_{5}n) \iff \exists c, n_0: T(n) \leq c \cdot \frac {log_{2}n}{log_{2}5} \forall n \geq n_0$
+- = $T(n) \in O(log_{5}n) \iff \exists c, n_0: T(n) \leq c \cdot log_{2}n \forall n \geq n_0$
+- Therefore $T(n) \in O(log_{2}n)$
+
+- This shows $\forall T(n), T(n) \in O(log_{2}n) -> T(n) \in O(log_{5}n)
+- Thus $O(log_{2}n) and O(log_{5}n)$ are the same
